@@ -108,7 +108,6 @@ export default function SpaceGame() {
     );
 
     if (isGameOver) {
-      console.log("Game Over triggered");
       setGameOver(true);
       playSound(explosionSound);
       if (animationRef.current !== null) {
@@ -119,7 +118,6 @@ export default function SpaceGame() {
     }
 
     if (Math.abs(position.x - planet.x) < PLANET_SIZE && Math.abs(position.y - planet.y) < PLANET_SIZE) {
-      console.log("Win condition triggered");
       setWin(true);
       playSound(victorySound);
       if (animationRef.current !== null) {
@@ -130,7 +128,6 @@ export default function SpaceGame() {
   }, [position, asteroids, planet]);
 
   const resetGame = () => {
-    console.log("Resetting game");
     setGameOver(false);
     setWin(false);
     setPosition({ x: SCREEN_WIDTH / 2, y: SCREEN_HEIGHT - 100 });
